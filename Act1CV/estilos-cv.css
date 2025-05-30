@@ -1,0 +1,136 @@
+/* Estilos PRO para el CV de Brandon */
+
+:root {
+  --color-primario: #1f2937;
+  --color-secundario: #4b5563;
+  --color-acento: #10b981;
+  --fondo: #f3f4f6;
+  --blanco: #ffffff;
+  --sombra: 0 4px 20px rgba(0, 0, 0, 0.15);
+  --transicion: all 0.3s ease-in-out;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  background-color: var(--fondo);
+  color: var(--color-primario);
+  line-height: 1.6;
+  padding-top: 100px; /* Espacio para el header fijo */
+}
+
+.cv-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: linear-gradient(135deg, var(--color-primario), var(--color-secundario));
+  color: var(--blanco);
+  padding: 0.5rem 0rem;
+  text-align: center;
+  box-shadow: var(--sombra);
+  transition: var(--transicion);
+  z-index: 1000;
+}
+
+.cv-nombre {
+  font-size: 2.8rem;
+  font-weight: 700;
+}
+
+.cv-titulo {
+  font-size: 1.3rem;
+  margin-top: 0.7rem;
+  font-weight: 400;
+}
+
+.cv-contenido {
+  max-width: 960px;
+  margin: 3rem auto;
+  background: var(--blanco);
+  padding: 2.5rem;
+  border-radius: 12px;
+  box-shadow: var(--sombra);
+  transition: var(--transicion);
+  animation: fadeIn 1s ease-in-out;
+}
+
+.cv-subtitulo {
+  border-bottom: 2px solid var(--color-secundario);
+  padding-bottom: 0.3rem;
+  margin-bottom: 1.2rem;
+  color: var(--color-primario);
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.cv-lista {
+  list-style: none;
+  padding-left: 1rem;
+}
+
+.cv-item::before {
+  content: '✔';
+  color: var(--color-acento);
+  margin-right: 0.6rem;
+  font-weight: bold;
+}
+
+.cv-item {
+  margin-bottom: 0.6rem;
+  transition: var(--transicion);
+}
+
+.cv-item:hover {
+  color: var(--color-acento);
+  transform: translateX(5px);
+}
+
+.cv-bloque {
+  margin-bottom: 2.5rem;
+  animation: slideInUp 0.8s ease;
+}
+
+.cv-texto {
+  margin-top: 0.6rem;
+  font-size: 1.05rem;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .cv-contenido {
+    padding: 1.5rem;
+  }
+  .cv-nombre {
+    font-size: 2rem;
+  }
+  .cv-subtitulo {
+    font-size: 1.3rem;
+  }
+}
